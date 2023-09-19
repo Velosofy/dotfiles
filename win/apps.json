@@ -1,0 +1,41 @@
+{
+	"$schema": "https://aka.ms/winget-packages.schema.2.0.json",
+	"CreationDate": "2023-09-19T14:00:03.724-00:00",
+	"Sources": [
+		{
+			"Packages": [
+				{
+					"PackageIdentifier": "Google.Chrome"
+				},
+				{
+					"PackageIdentifier": "Microsoft.PowerShell"
+				},
+				{
+					"PackageIdentifier": "Starship.Starship"
+				},
+				{
+					"PackageIdentifier": "Microsoft.WindowsTerminal"
+				},
+				{
+					"PackageIdentifier": "Discord.Discord"
+				},
+				{
+					"PackageIdentifier": "Valve.Steam"
+				},
+				{
+					"PackageIdentifier": "Microsoft.VisualStudioCode"
+				},
+				{
+					"PackageIdentifier": "Microsoft.Teams"
+				}
+			],
+			"SourceDetails": {
+				"Argument": "https://cdn.winget.microsoft.com/cache",
+				"Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
+				"Name": "winget",
+				"Type": "Microsoft.PreIndexed.Package"
+			}
+		}
+	],
+	"WinGetVersion": "1.5.2201"
+}

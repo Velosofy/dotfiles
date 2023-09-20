@@ -43,7 +43,16 @@ Add-Alias 'cat' 'bat'
 Add-Alias 'gs' 'git status'
 
 function ghub {
-    $url = (git remote get-url origin).Replace(':', '/').Replace('.git', '').Replace('git@', 'https://')
+    git remote get-url origin 2>$null
+    if ($LASTEXITCODE -eq 128) {
+        Write-Error "$((Get-Location).Path) is not a git repository."
+        return
+    }
+
+    $url = git remote get-url origin
+    if ($url.StartsWith('git@')) {
+        $url = $url.Replace(':', '/').Replace('.git', '').Replace('git@', 'https://')
+    }
     Start-Process $url
 }
 

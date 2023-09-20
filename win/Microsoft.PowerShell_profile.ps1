@@ -1,3 +1,6 @@
+function Invoke-Starship-PreCommand {
+    $Host.UI.RawUI.WindowTitle = "$pwd `a"
+}
 Invoke-Expression (&starship init powershell)
 
 $env:RIPGREP_CONFIG_PATH = "$HOME\.config\ripgrep.conf"

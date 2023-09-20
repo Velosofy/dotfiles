@@ -25,10 +25,17 @@ $items = @{
 
 foreach ($item in $items.GetEnumerator()) {
     try {
-        Write-Part "Copying "
-        Write-Emphasized $(Split-Path -Leaf $item.Key)
-        Copy-Item -Path $item.key -Destination $item.value -ErrorAction Stop
-        Write-Done
+        if (Compare-Object (Get-Content $item.Key) (Get-Content $item.Value)) {
+            Write-Part "Updating "
+            Write-Emphasized $(Split-Path -Leaf $item.Key)
+            Copy-Item -Path $item.Key -Destination $item.Value -ErrorAction Stop
+            Write-Done
+        }
+        else {
+            Write-Part "Skipping "
+            Write-Emphasized $(Split-Path -Leaf $item.Key)
+            Write-Host
+        }
     }
     catch {
         Write-NG

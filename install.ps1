@@ -19,7 +19,7 @@ scoop install main/bat
 scoop install extras/lazygit
 
 if (!(Get-Command winget)) {
-    Write-Warning "winget is not installed. Installing using scoop..."
+    Write-Warning "Winget is not installed. Installing using scoop..."
     scoop install main/winget
 }
 
@@ -36,6 +36,7 @@ else {
 
 Invoke-RestMethod -Uri "$baseurl/win/apps.json" -OutFile $ENV:TEMP\apps.json
 Start-Process -FilePath "pwsh" -ArgumentList "-NoExit -Command winget import -i $ENV:TEMP\apps.json --accept-source-agreements --accept-package-agreements" -Verb RunAs
+Remove-Item $ENV:TEMP\apps.json
 
 Install-Module -Name PSReadLine -Scope CurrentUser -Force -AcceptLicense
 Install-Module -Name PSFzf -Scope CurrentUser -Force -AcceptLicense

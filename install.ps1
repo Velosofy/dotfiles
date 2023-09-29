@@ -17,6 +17,7 @@ scoop install main/ripgrep
 scoop install main/fzf
 scoop install main/bat
 scoop install extras/lazygit
+scoop install scoop-search
 
 if (!(Get-Command winget)) {
     Write-Warning "Winget is not installed. Installing using scoop..."

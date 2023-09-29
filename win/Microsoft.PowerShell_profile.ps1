@@ -2,6 +2,7 @@ function Invoke-Starship-PreCommand {
     $Host.UI.RawUI.WindowTitle = "$pwd `a"
 }
 Invoke-Expression (&starship init powershell)
+Invoke-Expression (&scoop-search --hook)
 
 $env:RIPGREP_CONFIG_PATH = "$HOME\.config\ripgrep.conf"
 $env:BAT_STYLE = "plain"
@@ -38,9 +39,9 @@ Add-Alias 'l' 'eza'
 Add-Alias 'll' 'eza -l'
 Add-Alias 'lla' 'eza -la'
 Add-Alias 'pwd' '(Get-Location).Path'
-Add-Alias 'grep' 'rg'
 Add-Alias 'cat' 'bat'
 Add-Alias 'gs' 'git status'
+Set-Alias 'grep' 'rg'
 
 function ghub {
     git remote get-url origin 2>$null

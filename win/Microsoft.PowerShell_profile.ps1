@@ -39,9 +39,9 @@ Add-Alias 'l' 'eza'
 Add-Alias 'll' 'eza -l'
 Add-Alias 'lla' 'eza -la'
 Add-Alias 'pwd' '(Get-Location).Path'
+Set-Alias 'grep' 'rg'
 Add-Alias 'cat' 'bat'
 Add-Alias 'gs' 'git status'
-Set-Alias 'grep' 'rg'
 
 function ghub {
     git remote get-url origin 2>$null
@@ -67,6 +67,13 @@ function Update-Profile {
 
 function Edit-Profile {
     code $PROFILE
+}
+
+function Remove-History {
+    $confirm = Read-Host "Are you sure you want to delete the history file? (Y/N)"
+    if ($confirm -ne "Y" -or $confirm -ne "y") { return }
+
+    Get-PSReadlineOption | Select-Object -Expand HistorySavePath | Remove-Item -ErrorAction SilentlyContinue
 }
 
 function md5 ($file) {

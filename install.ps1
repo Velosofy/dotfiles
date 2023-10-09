@@ -16,6 +16,7 @@ scoop install main/aria2
 scoop install main/ripgrep
 scoop install main/fzf
 scoop install main/bat
+scoop install main/tre-command
 scoop install extras/lazygit
 scoop install scoop-search
 

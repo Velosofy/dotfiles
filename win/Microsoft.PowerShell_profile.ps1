@@ -34,13 +34,15 @@ Remove-Alias 'ls'
 Remove-Alias 'pwd'
 Remove-Alias 'cat'
 
-Add-Alias 'ls' 'eza'
-Add-Alias 'l' 'eza'
+Set-Alias 'ls' 'eza'
+Set-Alias 'l' 'eza'
 Add-Alias 'll' 'eza -l'
 Add-Alias 'lla' 'eza -la'
 Add-Alias 'pwd' '(Get-Location).Path'
 Set-Alias 'grep' 'rg'
-Add-Alias 'cat' 'bat'
+Set-Alias 'cat' 'bat'
+Set-Alias 'tree' 'tre'
+
 Add-Alias 'gs' 'git status'
 
 function ghub {

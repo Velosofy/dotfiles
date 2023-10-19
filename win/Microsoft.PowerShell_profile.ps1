@@ -42,6 +42,7 @@ Add-Alias 'pwd' '(Get-Location).Path'
 Set-Alias 'grep' 'rg'
 Set-Alias 'cat' 'bat'
 Set-Alias 'tree' 'tre'
+Set-Alias 'lg' 'lazygit'
 
 Add-Alias 'gs' 'git status'
 
@@ -97,3 +98,4 @@ function which ($command) {
 function touch ($name) {
     New-Item $name
 }
+

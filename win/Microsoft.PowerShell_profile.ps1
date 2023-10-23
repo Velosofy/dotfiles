@@ -44,6 +44,10 @@ Set-Alias 'cat' 'bat'
 Set-Alias 'tree' 'tre'
 Set-Alias 'lg' 'lazygit'
 
+if (Test-Path 'C:\Users\velosofy\.local\bin\lvim.ps1') {
+    Set-Alias 'lvim' 'C:\Users\velosofy\.local\bin\lvim.ps1'
+}
+
 Add-Alias 'gs' 'git status'
 
 function ghub {
